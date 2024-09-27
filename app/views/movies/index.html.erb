@@ -1,0 +1,21 @@
+<h1>PELÍCULAS</h1>
+<%= link_to 'Ingresar Nueva Película', new_movie_path, class: 'btn btn-primary mb-3' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Sinopsis</th>
+      <th scope="col">Director</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |pelicula| %>
+      <tr>
+        <td><%= pelicula.name %></td>
+        <td><%= pelicula.synopsis %></td>
+        <td><%= pelicula.director %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

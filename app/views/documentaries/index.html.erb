@@ -1,0 +1,21 @@
+<h1>DOCUMENTALES</h1>
+<%= link_to 'Ingresar Nuevo Documental', new_documentary_path, class: 'btn btn-primary mb-3' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Sinopsis</th>
+      <th scope="col">Director</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documentaries.each do |documental| %>
+      <tr>
+        <td><%= documental.name %></td>
+        <td><%= documental.synopsis %></td>
+        <td><%= documental.director %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

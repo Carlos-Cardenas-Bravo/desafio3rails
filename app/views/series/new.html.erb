@@ -1,0 +1,31 @@
+<h1>Nueva Serie</h1>
+<%= form_with model: @series, local: true, method: :post do  |form| %>
+    <% if @serie.errors.any? %>
+      <div id="mensaje_error">
+          <h2><%= pluralize(@serie.errors.count, "errores") %> prohibieron que esta serie se guardara:</h2>
+          <ul>
+              <% @serie.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+    <% end %>
+  <div class="col-4">
+    <div>
+      <%= form.label :name, "Nombre", class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+    <div>
+      <%= form.label :synopsis, "Sinopsis", class: "form-label" %>
+      <%= form.text_field :synopsis, class: "form-control" %>
+    </div>
+    <div>
+      <%= form.label :director, "Director", class: "form-label" %>
+      <%= form.text_field :director, class: "form-control" %>
+    </div>
+    <div>
+      <p></p>
+      <%= form.submit "Guardar Serie", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

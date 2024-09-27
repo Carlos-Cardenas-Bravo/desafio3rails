@@ -1,0 +1,21 @@
+<h1>SERIES</h1>
+<%= link_to 'Ingresar Nueva Serie', new_series_path, class: 'btn btn-primary mb-3' %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Sinopsis</th>
+      <th scope="col">Director</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @series.each do |serie| %>
+      <tr>
+        <td><%= serie.name %></td>
+        <td><%= serie.synopsis %></td>
+        <td><%= serie.director %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
