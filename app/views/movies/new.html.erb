@@ -13,15 +13,15 @@
   <div class="col-4">
     <div>
       <%= form.label :name, "Nombre", class: "form-label" %>
-      <%= form.text_field :name, class: "form-control" %>
+      <%= form.text_field :name, required: true, autofocus: true, class: "form-control" %>
     </div>
     <div>
       <%= form.label :synopsis, "Sinopsis", class: "form-label" %>
-      <%= form.text_field :synopsis, class: "form-control" %>
+      <%= form.text_field :synopsis, required: true, class: "form-control" %>
     </div>
     <div>
       <%= form.label :director, "Director", class: "form-label" %>
-      <%= form.text_field :director, class: "form-control" %>
+      <%= form.text_field :director, required: true, class: "form-control" %>
     </div>
     <div>
       <p></p>

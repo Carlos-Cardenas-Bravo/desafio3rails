@@ -24,9 +24,9 @@
     <div class="container">
       
       <p></p>
-      <button> <%= link_to "Películas", movies_path %></button>
-      <button> <%= link_to "Series", films_path %></button>
-      <button> <%= link_to "Documentales", documentaries_path %></button>
+      <%= link_to "Películas", movies_path, class: "btn btn-primary" %>
+      <%= link_to "Series", films_path, class: "btn btn-secondary" %>
+      <%= link_to "Documentales", documentaries_path, class: "btn btn-success" %>
 
       <% if flash[:notice] %>
         <div class="alert alert-success">
