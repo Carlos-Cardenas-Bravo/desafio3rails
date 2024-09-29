@@ -1,31 +1,29 @@
-<h1>Nueva Serie</h1>
-<%= form_with model: @film, local: true, method: :post do  |form| %>
-    <% if @film.errors.any? %>
-      <div id="mensaje_error">
-          <h2><%= pluralize(@film.errors.count, "errores") %> prohibieron que esta serie se guardara:</h2>
-          <ul>
-              <% @film.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-              <% end %>
-          </ul>
-      </div>
-    <% end %>
-    <div class="col-4">
-      <div>
-        <%= form.label :name, "Nombre", class: "form-label" %>
-        <%= form.text_field :name, required: true, autofocus: true, class: "form-control" %>
-      </div>
-      <div>
-        <%= form.label :synopsis, "Sinopsis", class: "form-label" %>
-        <%= form.text_field :synopsis, required: true, class: "form-control" %>
-      </div>
-      <div>
-        <%= form.label :director, "Director", class: "form-label" %>
-        <%= form.text_field :director, required: true, class: "form-control" %>
-      </div>
-      <div>
-        <p></p>
-        <%= form.submit "Guardar Película", class: "btn btn-primary" %>
-      </div>
+<h1 class="title">Nueva Serie</h1>
+<%= form_with model: @film, local: true, method: :post do |form| %>
+  <div class="field">
+    <label class="label"><%= form.label :name, "Nombre" %></label>
+    <div class="control">
+      <%= form.text_field :name, required: true, autofocus: true, class: "input" %>
     </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= form.label :synopsis, "Sinopsis" %></label>
+    <div class="control">
+      <%= form.text_field :synopsis, required: true, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= form.label :director, "Director" %></label>
+    <div class="control">
+      <%= form.text_field :director, required: true, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= form.submit "Guardar Serie", class: "button is-primary is-rounded" %>
+    </div>
+  </div>
 <% end %>
